@@ -112,16 +112,8 @@ gallery.innerHTML = images
   )
   .join('');
 
-window.lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
   captionPosition: 'bottom',
-});
-
-document.querySelector('.gallery').addEventListener('click', e => {
-  e.preventDefault();
-  const link = e.target.closest('a');
-  if (link) {
-    window.lightbox.open(link);
-  }
 });
